@@ -39,11 +39,13 @@ export function CourseCatalog() {
               />
             </div>
             <div className="course-content">
-              <span className="category-label">
-                <span />
-                {course.category}
-              </span>
-              <h3>{course.title}</h3>
+              <h3>
+                <span
+                  className="category-dot"
+                  style={{ backgroundColor: course.color }}
+                />
+                {course.title}
+              </h3>
               <p>{course.description}</p>
               <CoursePrice price={course.price} />
               <details>

@@ -479,18 +479,13 @@ h2 {
 .course-content {
   padding: 22px 20px 0;
 }
-.category-label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--color-text-muted);
-  font-size: 10px;
-}
-.category-label > span {
-  width: 6px;
-  height: 6px;
-  background: var(--category-color);
+.category-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
 }
 .course-content h3 {
   font-size: 24px;
@@ -935,19 +930,23 @@ details[open] summary svg {
     font-size: 12px;
   }
   .navigation {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    padding: 24px var(--page-gutter);
+    padding: 0 var(--page-gutter);
     background: var(--color-background);
     z-index: 20;
     box-shadow: 0 15px 20px #0a132211;
     align-items: stretch;
     gap: 20px;
-    max-height: calc(100dvh - var(--header-expanded-height));
-    overflow-y: auto;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      max-height 0.35s ease,
+      opacity 0.35s ease,
+      padding 0.35s ease;
   }
   .site-header.is-compact .navigation {
     max-height: calc(100dvh - 76px);
@@ -955,6 +954,12 @@ details[open] summary svg {
   .navigation.is-open {
     display: flex;
     flex-direction: column;
+    max-height: calc(100dvh - var(--header-expanded-height));
+    opacity: 1;
+    padding: 24px var(--page-gutter);
+  }
+  .site-header.is-compact .navigation.is-open {
+    max-height: calc(100dvh - 76px);
   }
   .hero {
     grid-template-columns: 1fr 1fr;

@@ -1,9 +1,12 @@
 import { ArrowSVG } from "@/components/ui/arrow-svg";
+import { HeroPortrait } from "@/components/ui/hero-portrait/hero-portrait";
+import styles from "./hero.module.css";
 
 export function Hero() {
   return (
-    <section id="acasa" className="hero">
-      <div className="hero-copy">
+    <section id="acasa" className={`hero ${styles.hero}`}>
+      <HeroPortrait />
+      <div className={`hero-copy ${styles.copy}`}>
         <div className="eyebrow">
           <span className="status-dot" /> MIȘCAREA ÎNCEPE CU TINE
         </div>
@@ -35,34 +38,7 @@ export function Hero() {
           </span>
         </div>
       </div>
-      <div className="hero-visual">
-        <div className="visual-topline">
-          <span>UN NOU ÎNCEPUT, ÎN RITMUL TĂU</span>
-          <span>BIOTOP / BETA</span>
-        </div>
-        <div className="hero-visual-message">
-          <span>Mișcare.</span>
-          <span>Echilibru.</span>
-          <span>Recuperare.</span>
-        </div>
-        <div className="visual-orbit" aria-hidden="true" />
-        <span className="visual-plus" aria-hidden="true">
-          +
-        </span>
-        <div className="visual-caption">
-          <span className="caption-icon">↗</span>
-          <div>
-            Pași mici.
-            <br />
-            <strong>Mai multă libertate.</strong>
-          </div>
-          <span className="image-label">BIOTOP REHAB</span>
-        </div>
-        <div className="floating-label">
-          <span className="status-dot" /> Recuperare, oriunde ești.
-        </div>
-      </div>
-      <div className="hero-bottom">
+      <div className={`hero-bottom ${styles.bottom}`}>
         <span>EXPERTIZĂ MEDICALĂ. LA ÎNDEMÂNA TA.</span>
         <a href="#cursuri">
           Descoperă mai mult <span>↓</span>

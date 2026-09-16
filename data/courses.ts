@@ -95,7 +95,7 @@ export const courses: readonly Course[] = [
     id: "incheietura-si-mana",
     image: wristAndHandImage,
     price: null,
-    title: "Încheietură & mână",
+    title: "Încheietură și mână",
     category: "Încheietură și mână",
     color: "#0D9488",
     description: "Mișcări mici, importante în fiecare zi.",

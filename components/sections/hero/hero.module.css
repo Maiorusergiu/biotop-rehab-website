@@ -1,0 +1,120 @@
+.hero.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: clamp(650px, 53vw, 900px);
+  padding: 50px var(--page-gutter) 0;
+  overflow: hidden;
+  background: #071626;
+  color: #d5e0ee;
+}
+
+.hero .copy {
+  position: relative;
+  z-index: 1;
+  width: 47%;
+  margin-left: auto;
+  padding: 30px 0 45px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.copy h1 {
+  color: #fff;
+  font-size: clamp(42px, 4.6vw, 78px);
+}
+.copy h1 span {
+  color: #7eb3ff;
+}
+.copy :global(.eyebrow) {
+  color: #a8ccff;
+}
+.copy :global(.status-dot) {
+  background: #7eb3ff;
+}
+.copy :global(.hero-description) {
+  color: #c5d1e0;
+}
+.copy :global(.text-link) {
+  color: #edf4ff;
+}
+.copy :global(.play-icon) {
+  border-color: #91b9ef70;
+  background: #ffffff08;
+}
+.copy :global(.doctor-note) {
+  color: #e6eef9;
+}
+.copy :global(.doctor-note) div > span {
+  color: #b2c4db;
+}
+.copy :global(.note-symbol) {
+  color: #7eb3ff;
+}
+.copy :global(.hero-actions) {
+  gap: 20px;
+}
+
+.hero .bottom {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-top: 1px solid #ffffff26;
+  border-bottom: 0;
+  color: #c5d1e0;
+  padding: 24px 0;
+}
+.bottom a {
+  color: white;
+}
+
+@media (max-width: 1000px) and (min-width: 801px) {
+  .hero .copy {
+    width: 49%;
+  }
+  .copy h1 {
+    font-size: 41px;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero.hero {
+    min-height: 0;
+    padding-top: 380px;
+    gap: 0;
+  }
+  .hero .copy {
+    width: 100%;
+    margin: 0;
+    padding: 0 0 30px;
+  }
+  .copy h1 {
+    font-size: clamp(40px, 7.5vw, 62px);
+  }
+  .copy :global(.hero-description) {
+    max-width: 540px;
+    font-size: 13px;
+  }
+  .copy :global(.hero-actions) {
+    margin: 25px 0 28px;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero.hero {
+    padding-top: 330px;
+  }
+  .copy h1 {
+    font-size: clamp(37px, 10vw, 54px);
+  }
+  .hero .bottom {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 20px 0;
+  }
+}

@@ -1,0 +1,45 @@
+.portrait {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.portrait .image {
+  object-fit: cover;
+  object-position: 40% 20%;
+}
+
+.shading {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(0deg, #071626 0%, #07162600 24%),
+    linear-gradient(90deg, transparent 36%, #07162622 49%, #07162680 100%);
+}
+
+@media (max-width: 800px) {
+  .portrait {
+    height: 440px;
+  }
+  .portrait .image {
+    object-position: 22% 12%;
+  }
+  .shading {
+    background: linear-gradient(
+      180deg,
+      #07162600 48%,
+      #07162699 78%,
+      #071626 100%
+    );
+  }
+}
+
+@media (max-width: 540px) {
+  .portrait {
+    height: 380px;
+  }
+  .portrait .image {
+    object-position: 20% 10%;
+  }
+}

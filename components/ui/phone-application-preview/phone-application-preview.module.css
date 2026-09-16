@@ -1,0 +1,131 @@
+.statusIndicators {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--color-text-heading);
+}
+
+.statusIndicators svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.batteryIndicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 6px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 490px;
+  margin: 12px -12px -8px;
+  padding: 12px 9px 9px;
+  overflow: hidden;
+  border-radius: 0 0 29px 29px;
+  background: var(--color-background);
+  color: var(--color-text-heading);
+}
+
+.programImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 338 / 271;
+  object-fit: fill;
+  border-radius: 9px;
+}
+
+.title {
+  margin: 18px 0 10px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.65px;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 8px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.benefits {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  margin: 11px 0 30px;
+  list-style: none;
+}
+
+.benefits li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 7.6px;
+  line-height: 1.5;
+  color: var(--color-text-body);
+}
+
+.checkIcon {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: #e8f0ff;
+  color: var(--color-primary);
+}
+
+.checkIcon svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.actions {
+  display: grid;
+  gap: 7px;
+  margin: auto -9px 0;
+  padding: 10px 9px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.primaryAction,
+.secondaryAction {
+  display: grid;
+  place-items: center;
+  min-height: 36px;
+  border: 1px solid var(--color-primary-light);
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.primaryAction {
+  background: var(--color-primary-light);
+  color: white;
+}
+.secondaryAction {
+  color: var(--color-primary-light);
+}
+
+@media (max-width: 540px) {
+  .screen {
+    min-height: 465px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .benefits li {
+    font-size: 7px;
+  }
+}

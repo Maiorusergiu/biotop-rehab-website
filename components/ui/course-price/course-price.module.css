@@ -1,0 +1,31 @@
+.price {
+  margin-top: 18px;
+  padding: 13px 14px;
+  border-radius: 10px;
+  background: #f5f8ff;
+}
+.label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--color-text-muted);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.price p {
+  line-height: 1.5;
+}
+.price strong {
+  font-family: var(--font-archivo), Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 650;
+  color: var(--color-primary);
+}
+.price p > span {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+.price .pending {
+  font-size: 11px;
+  color: var(--color-text-body);
+}

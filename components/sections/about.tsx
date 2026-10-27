@@ -1,6 +1,4 @@
 import Image from "next/image";
-import oliviuPortrait from "@/assets/images/team/oli-3.jpeg";
-import sergiuPortrait from "@/assets/images/team/sergiu.jpg";
 
 export function About() {
   return (
@@ -30,8 +28,10 @@ export function About() {
       <div className="team-grid">
         <article className="team-card">
           <Image
-            src={oliviuPortrait}
+            src="/team/oli-3.jpeg"
             alt="Dr. Marian Oliviu"
+            width={500}
+            height={600}
             sizes="(max-width: 800px) 43vw, 23vw"
             className="team-portrait team-portrait-oliviu"
           />
@@ -41,8 +41,10 @@ export function About() {
         </article>
         <article className="team-card team-card-offset">
           <Image
-            src={sergiuPortrait}
+            src="/team/sergiu.jpg"
             alt="Maioru Sergiu Ioan"
+            width={500}
+            height={600}
             sizes="(max-width: 800px) 43vw, 23vw"
             className="team-portrait team-portrait-sergiu"
           />

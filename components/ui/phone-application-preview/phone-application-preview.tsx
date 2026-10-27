@@ -1,5 +1,4 @@
 import Image from "next/image";
-import programCompleteImage from "@/assets/images/program-complet.png";
 import styles from "./phone-application-preview.module.css";
 
 const onboardingBenefits = [
@@ -73,8 +72,10 @@ export function PhoneApplicationPreview() {
       </div>
       <div className={styles.screen} aria-hidden="true">
         <Image
-          src={programCompleteImage}
+          src="/images/program-complet.png"
           alt=""
+          width={300}
+          height={600}
           sizes="240px"
           className={styles.programImage}
         />

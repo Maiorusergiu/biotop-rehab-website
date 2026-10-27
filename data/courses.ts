@@ -1,13 +1,3 @@
-import type { StaticImageData } from "next/image";
-import spineImage from "@/assets/images/courses-images/coloana.jpeg";
-import shoulderImage from "@/assets/images/courses-images/umar.jpeg";
-import kneeImage from "@/assets/images/courses-images/genunchi.jpeg";
-import ankleImage from "@/assets/images/courses-images/glezna.jpeg";
-import hipImage from "@/assets/images/courses-images/sold.jpeg";
-import elbowImage from "@/assets/images/courses-images/cot.jpeg";
-import wristAndHandImage from "@/assets/images/courses-images/incheietura-si-mana.jpeg";
-import abdomenImage from "@/assets/images/courses-images/abdomen.jpeg";
-
 export type CoursePrice = {
   amount: number;
   periodLabel: string;
@@ -21,13 +11,13 @@ type Course = {
   description: string;
   detail: string;
   price: CoursePrice | null;
-  image: StaticImageData;
+  image: string;
 };
 
 export const courses: readonly Course[] = [
   {
     id: "coloana",
-    image: spineImage,
+    image: "/courses-images/coloana.jpeg",
     price: null,
     title: "Spate și coloană",
     category: "Coloană",
@@ -38,7 +28,7 @@ export const courses: readonly Course[] = [
   },
   {
     id: "umar",
-    image: shoulderImage,
+    image: "/courses-images/umar.jpeg",
     price: null,
     title: "Umăr",
     category: "Umăr",
@@ -49,7 +39,7 @@ export const courses: readonly Course[] = [
   },
   {
     id: "genunchi",
-    image: kneeImage,
+    image: "/courses-images/genunchi.jpeg",
     price: null,
     title: "Genunchi",
     category: "Genunchi",
@@ -60,7 +50,7 @@ export const courses: readonly Course[] = [
   },
   {
     id: "glezna",
-    image: ankleImage,
+    image: "/courses-images/glezna.jpeg",
     price: null,
     title: "Gleznă",
     category: "Gleznă",
@@ -71,7 +61,7 @@ export const courses: readonly Course[] = [
   },
   {
     id: "sold",
-    image: hipImage,
+    image: "/courses-images/sold.jpeg",
     price: null,
     title: "Șold",
     category: "Șold",
@@ -82,7 +72,7 @@ export const courses: readonly Course[] = [
   },
   {
     id: "cot",
-    image: elbowImage,
+    image: "/courses-images/cot.jpeg",
     price: null,
     title: "Cot",
     category: "Cot",
@@ -93,7 +83,7 @@ export const courses: readonly Course[] = [
   },
   {
     id: "incheietura-si-mana",
-    image: wristAndHandImage,
+    image: "/courses-images/incheietura-si-mana.jpeg",
     price: null,
     title: "Încheietură și mână",
     category: "Încheietură și mână",
@@ -104,7 +94,7 @@ export const courses: readonly Course[] = [
   },
   {
     id: "abdomen",
-    image: abdomenImage,
+    image: "/courses-images/abdomen.jpeg",
     price: null,
     title: "Abdomen",
     category: "Abdomen",

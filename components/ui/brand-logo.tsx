@@ -1,5 +1,5 @@
 import Image from "next/image";
-import brandLogo from "@/public/images/biotop-rehab-logo.png";
+import brandLogo from "@/public/images/biotop-rehab-new-logo.jpeg";
 
 export function BrandLogo() {
   return (

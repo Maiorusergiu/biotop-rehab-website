@@ -43,8 +43,8 @@ export function About() {
           <Image
             src="/team/sergiu.jpg"
             alt="Maioru Sergiu Ioan"
-            width={500}
-            height={600}
+            width={960}
+            height={1120}
             sizes="(max-width: 800px) 43vw, 23vw"
             className="team-portrait team-portrait-sergiu"
           />

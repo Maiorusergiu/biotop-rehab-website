@@ -1189,14 +1189,14 @@ details[open] summary svg {
   }
 }
 
-/* Crop to the circular mark in the current 1672 × 941 image. */
+/* Crop to the circular mark (without the wordmark) in the current 1254 × 1254 image. */
 .brand-logo-frame .brand-logo {
   position: absolute;
-  width: 222.93%;
+  width: 125.4%;
   max-width: none;
   height: auto;
-  left: -61.47%;
-  top: -11.07%;
+  left: -12%;
+  top: -1%;
   border-radius: 0;
 }
 

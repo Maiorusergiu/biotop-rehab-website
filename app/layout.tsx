@@ -20,7 +20,11 @@ export const metadata: Metadata = {
   description:
     "Descoperă Biotop Rehab: aplicația mobilă cu exerciții video pentru spate, umăr, genunchi și gleznă, cu expertiza Dr. Marian Oliviu.",
   icons: {
-    icon: "/images/favicon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/images/favicon.png", type: "image/png", sizes: "64x64" },
+    ],
+    apple: "/images/apple-touch-icon.png",
   },
 };
 

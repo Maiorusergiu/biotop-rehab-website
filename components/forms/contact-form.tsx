@@ -13,7 +13,7 @@ export function ContactForm() {
     const subject = String(formData.get("subject") ?? "");
     const message = String(formData.get("message") ?? "").trim();
     const body = `Nume: ${name}\nEmail: ${email}\n\n${message}`;
-    window.location.href = `mailto:contact@biotopacademy.ro?subject=${encodeURIComponent(`Biotop Rehab — ${subject}`)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:contact@biotopacademy.ro?subject=${encodeURIComponent(`BioTop Rehab — ${subject}`)}&body=${encodeURIComponent(body)}`;
     setIsEmailPrepared(true);
   }
 

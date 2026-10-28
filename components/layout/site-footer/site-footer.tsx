@@ -18,11 +18,11 @@ export function SiteFooter() {
           <a
             className={styles.brand}
             href="#acasa"
-            aria-label="Biotop Rehab — Acasă"
+            aria-label="BioTop Rehab — Acasă"
           >
             <BrandLogo />
             <span>
-              biotop <span className={styles.brandSecondary}>rehab</span>
+              BioTop <span className={styles.brandSecondary}>Rehab</span>
             </span>
           </a>
           <p className={styles.tagline}>
@@ -31,12 +31,12 @@ export function SiteFooter() {
             <span>Mai multă viață.</span>
           </p>
           <p className={styles.description}>
-            Exerciții ghidate, expertiză medicală și un nou început. În ritmul
-            tău.
+            Exerciții ghidate, create de un medic de recuperare, și un nou
+            început. În ritmul tău.
           </p>
         </div>
         <nav className={styles.navigation} aria-label="Navigare în subsol">
-          <h2>Descoperă Biotop</h2>
+          <h2>Descoperă BioTop</h2>
           <ul>
             {footerLinks.map((link) => (
               <li key={link.href}>
@@ -68,7 +68,7 @@ export function SiteFooter() {
       </div>
       <div className={styles.bottom}>
         <p>
-          © {new Date().getFullYear()} Biotop Rehab. Toate drepturile rezervate.
+          © {new Date().getFullYear()} BioTop Rehab. Toate drepturile rezervate.
         </p>
         <a href="#acasa">
           Înapoi sus <span aria-hidden="true">↑</span>

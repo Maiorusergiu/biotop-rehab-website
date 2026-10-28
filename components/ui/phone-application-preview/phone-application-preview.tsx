@@ -160,7 +160,7 @@ export function PhoneApplicationPreview() {
     <div
       className="phone"
       role="img"
-      aria-label="Previzualizare a ecranului Acasă din aplicația Biotop Rehab: programul săptămânii cu 1 din 3 antrenamente făcute, reminder la 08:45 și ultimul exercițiu vizionat, Exerciții pentru spate."
+      aria-label="Previzualizare a ecranului Acasă din aplicația BioTop Rehab: programul săptămânii cu 1 din 3 antrenamente făcute, reminder la 08:45 și ultimul exercițiu vizionat, Exerciții pentru spate."
     >
       <div className="phone-camera" />
       <div className="phone-header" aria-hidden="true">

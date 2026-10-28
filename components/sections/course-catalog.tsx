@@ -34,7 +34,7 @@ export function CourseCatalog() {
             <div className="course-image-wrap">
               <Image
                 src={course.image}
-                alt={`Prezentarea cursului ${course.title} — Biotop Rehab`}
+                alt={`Prezentarea cursului ${course.title} — BioTop Rehab`}
                 width={400}
                 height={600}
                 sizes="(max-width: 540px) 90vw, (max-width: 800px) 44vw, 23vw"

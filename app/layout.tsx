@@ -16,9 +16,9 @@ const plusJakartaSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Biotop Rehab — Înapoi la mișcare. Înapoi la tine.",
+  title: "BioTop Rehab — Înapoi la mișcare. Înapoi la tine.",
   description:
-    "Descoperă Biotop Rehab: aplicația mobilă cu exerciții video pentru spate, umăr, genunchi și gleznă, cu expertiza Dr. Marian Oliviu.",
+    "Descoperă BioTop Rehab: aplicația mobilă cu exerciții video pentru spate, umăr, genunchi și gleznă, create de Dr. Marian Oliviu.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },

@@ -284,9 +284,17 @@ h2 span {
   margin-top: 4px;
 }
 .note-symbol {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
   color: var(--color-primary);
-  font-size: 29px;
-  margin-left: 12px;
+}
+.note-symbol svg {
+  width: 22px;
+  height: 22px;
 }
 .hero-visual {
   position: relative;

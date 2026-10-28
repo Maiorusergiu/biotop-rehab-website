@@ -6,7 +6,7 @@ export function About() {
       <div className="about-statement">
         <p className="eyebrow">03 — OAMENII DIN SPATELE MIȘCĂRII</p>
         <h2>
-          Expertiză medicală.
+          Recuperare ghidată.
           <br />
           Tehnologie cu sens.
           <br />
@@ -14,7 +14,7 @@ export function About() {
         </h2>
         <p>
           Credem că accesul la exerciții explicate clar poate face primul pas
-          mai ușor. Biotop Rehab aduce împreună recuperarea medicală și
+          mai ușor. BioTop Rehab aduce împreună recuperarea medicală și
           tehnologia, într-o aplicație construită în jurul tău.
         </p>
         <div className="mission-note">
@@ -37,7 +37,7 @@ export function About() {
           />
           <h3>Dr. Marian Oliviu</h3>
           <p>Medic de recuperare medicală</p>
-          <span>EXPERTIZĂ MEDICALĂ</span>
+          <span>CONȚINUTUL CURSURILOR</span>
         </article>
         <article className="team-card team-card-offset">
           <Image

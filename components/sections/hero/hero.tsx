@@ -29,17 +29,20 @@ export function Hero() {
           </a>
         </div>
         <div className="doctor-note">
+          <span className="note-symbol" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 2.8l2.2 1.6 2.7-.1.8 2.6 2.2 1.6-.9 2.5.9 2.5-2.2 1.6-.8 2.6-2.7-.1L12 21.2l-2.2-1.6-2.7.1-.8-2.6-2.2-1.6.9-2.5-.9-2.5 2.2-1.6.8-2.6 2.7.1z" />
+              <path d="m8.8 12.2 2.2 2.2 4.3-4.6" />
+            </svg>
+          </span>
           <div>
-            Cu expertiza <strong>Dr. Marian Oliviu</strong>
+            Programe create de <strong>Dr. Marian Oliviu</strong>
             <span>Medic de recuperare medicală</span>
           </div>
-          <span className="note-symbol" aria-hidden="true">
-            ✳
-          </span>
         </div>
       </div>
       <div className={`hero-bottom ${styles.bottom}`}>
-        <span>EXPERTIZĂ MEDICALĂ. LA ÎNDEMÂNA TA.</span>
+        <span>RECUPERARE GHIDATĂ. LA ÎNDEMÂNA TA.</span>
         <a href="#cursuri">
           Descoperă mai mult <span>↓</span>
         </a>

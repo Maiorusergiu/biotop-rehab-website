@@ -39,10 +39,10 @@ export function SiteHeader() {
         <header
           className={`site-header${isHeaderCompact ? " is-compact" : ""}`}
         >
-          <a className="brand" href="#acasa" aria-label="Biotop Rehab — Acasă">
+          <a className="brand" href="#acasa" aria-label="BioTop Rehab — Acasă">
             <BrandLogo />
             <span>
-              biotop<span className="brand-secondary">rehab</span>
+              BioTop<span className="brand-secondary">Rehab</span>
             </span>
           </a>
           <button

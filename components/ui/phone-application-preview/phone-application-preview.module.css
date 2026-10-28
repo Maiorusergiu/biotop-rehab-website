@@ -24,98 +24,325 @@
   flex-direction: column;
   min-height: 490px;
   margin: 12px -12px -8px;
-  padding: 12px 9px 9px;
+  padding: 12px 10px 10px;
   overflow: hidden;
   border-radius: 0 0 29px 29px;
-  background: var(--color-background);
+  background: linear-gradient(180deg, #dce8fc 0%, #eef3fb 30%, var(--color-background) 60%);
   color: var(--color-text-heading);
 }
 
-.programImage {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 338 / 271;
-  object-fit: fill;
-  border-radius: 9px;
+.greetingRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.title {
-  margin: 18px 0 10px;
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: -0.65px;
-  line-height: 1.2;
+.greetingRow > div {
+  flex: 1;
 }
 
-.description {
-  font-size: 8px;
-  line-height: 1.65;
+.greeting {
+  font-size: 7.5px;
   color: var(--color-text-muted);
 }
 
-.benefits {
-  display: grid;
-  gap: 8px;
-  padding: 0;
-  margin: 11px 0 30px;
-  list-style: none;
+.title {
+  margin-top: 2px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  line-height: 1.15;
 }
 
-.benefits li {
+.messageButton,
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.messageButton {
+  background: white;
+  color: var(--color-primary);
+  box-shadow: 0 2px 8px #1f6fe51a;
+}
+
+.messageButton svg {
+  width: 13px;
+  height: 13px;
+}
+
+.avatar {
+  overflow: hidden;
+  align-items: end;
+  border: 1.5px solid white;
+  background: linear-gradient(160deg, #eaf1fe 0%, #c9dbf8 100%);
+  color: var(--color-primary-light);
+  box-shadow: 0 2px 8px #1f6fe526;
+}
+
+.avatar svg {
+  width: 22px;
+  height: 22px;
+  margin-bottom: -2px;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 11px;
+  padding: 3px;
+  border-radius: 11px;
+  background: white;
+  box-shadow: 0 2px 10px #0e1a2b0d;
+}
+
+.tabs span {
+  display: grid;
+  place-items: center;
+  min-height: 24px;
+  border-radius: 8px;
+  font-size: 8px;
+  color: var(--color-text-muted);
+}
+
+.tabs .tabActive {
+  background: var(--color-text-heading);
+  color: white;
+  font-weight: 650;
+}
+
+.weekCard {
+  margin-top: 10px;
+  padding: 11px 10px 9px;
+  border-radius: 13px;
+  background: white;
+  box-shadow: 0 3px 14px #0e1a2b12;
+}
+
+.weekHeader {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 7.6px;
-  line-height: 1.5;
-  color: var(--color-text-body);
 }
 
-.checkIcon {
-  display: grid;
-  place-items: center;
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  border-radius: 6px;
-  background: #e8f0ff;
+.weekHeader > div {
+  flex: 1;
+}
+
+.weekEyebrow {
+  display: block;
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
   color: var(--color-primary);
 }
 
-.checkIcon svg {
-  width: 14px;
-  height: 14px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.weekTitle {
+  display: block;
+  margin-top: 3px;
+  font-size: 9px;
+  line-height: 1.3;
 }
 
-.actions {
-  display: grid;
-  gap: 7px;
-  margin: auto -9px 0;
-  padding: 10px 9px 0;
-  border-top: 1px solid var(--color-border);
-}
-
-.primaryAction,
-.secondaryAction {
+.weekRing {
   display: grid;
   place-items: center;
-  min-height: 36px;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, white 58%, transparent 60%),
+    conic-gradient(var(--color-primary) 0 33.3%, #e8eef8 33.3% 100%);
+  font-size: 7px;
+  color: var(--color-text-muted);
+}
+
+.weekRing strong {
+  font-size: 10px;
+  color: var(--color-text-heading);
+}
+
+.weekDays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.weekDays li {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+}
+
+.dayLabel {
+  font-size: 6.5px;
+  color: var(--color-text-muted);
+}
+
+.dayDate {
+  display: grid;
+  place-items: center;
+  width: 19px;
+  height: 19px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  font-size: 7.5px;
+  color: var(--color-text-faint);
+}
+
+.weekDays li[data-status="done"] .dayDate {
+  background: var(--color-primary);
+  color: white;
+}
+
+.weekDays li[data-status="planned"] .dayDate {
+  border-color: var(--color-primary-light);
+  color: var(--color-text-heading);
+}
+
+.weekDays li[data-status="today"] .dayLabel {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.weekDays li[data-status="today"] .dayDate {
+  border: 1.5px solid var(--color-primary);
+  background: #e8f0ff;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.weekLegend {
+  display: flex;
+  gap: 10px;
+  margin-top: 9px;
+  font-size: 6.5px;
+  color: var(--color-text-muted);
+}
+
+.weekLegend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.legendDone,
+.legendPlanned {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.legendDone {
+  background: var(--color-primary);
+}
+
+.legendPlanned {
   border: 1px solid var(--color-primary-light);
-  border-radius: 10px;
-  font-size: 9px;
+}
+
+.editSchedule {
+  display: block;
+  margin-top: 8px;
+  padding-top: 7px;
+  border-top: 1px solid var(--color-border);
+  text-align: right;
+  font-size: 7.5px;
+  font-weight: 650;
+  color: var(--color-primary);
+}
+
+.sectionTitle {
+  margin: 13px 0 7px;
+  font-size: 11px;
   font-weight: 750;
 }
 
-.primaryAction {
-  background: var(--color-primary-light);
-  color: white;
+.exerciseList {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 10px;
 }
-.secondaryAction {
-  color: var(--color-primary-light);
+
+.exerciseCard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 3px 14px #0e1a2b12;
+}
+
+.exerciseThumbnail {
+  width: 40px;
+  height: 50px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.exerciseInfo {
+  display: grid;
+  gap: 2px;
+  flex: 1;
+  font-size: 6.5px;
+  color: var(--color-text-muted);
+}
+
+.exerciseInfo strong {
+  font-size: 8.5px;
+  color: var(--color-text-heading);
+}
+
+.exerciseInfo .exerciseSessions {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.exerciseChevron {
+  font-size: 12px;
+  color: var(--color-text-faint);
+}
+
+.bottomNavigation {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-top: auto;
+  padding: 4px;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 -2px 14px #0e1a2b0f;
+}
+
+.bottomNavigation span {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 5px 0;
+  border-radius: 10px;
+  font-size: 7px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.bottomNavigation svg {
+  width: 12px;
+  height: 12px;
+}
+
+.bottomNavigation .navActive {
+  background: var(--color-primary);
+  color: white;
 }
 
 @media (max-width: 540px) {
@@ -123,9 +350,6 @@
     min-height: 465px;
   }
   .title {
-    font-size: 18px;
-  }
-  .benefits li {
-    font-size: 7px;
+    font-size: 14px;
   }
 }

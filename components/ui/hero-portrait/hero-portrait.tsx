@@ -9,6 +9,8 @@ export function HeroPortrait() {
         alt="Dr. Marian Oliviu în sala de antrenament"
         fill
         sizes="100vw"
+        loading="eager"
+        fetchPriority="high"
         className={styles.image}
       />
       <div className={styles.shading} aria-hidden="true" />

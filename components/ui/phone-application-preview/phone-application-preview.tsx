@@ -1,36 +1,27 @@
 import Image from "next/image";
 import styles from "./phone-application-preview.module.css";
 
-const onboardingBenefits = [
-  "Cursuri pentru fiecare articulație",
-  "Video, anatomie și exerciții ghidate",
-  "Recuperare, prevenție și performanță",
+type DayStatus = "done" | "planned" | "today" | "rest";
+
+const weekDays: { label: string; date: number; status: DayStatus }[] = [
+  { label: "Lu", date: 26, status: "done" },
+  { label: "Ma", date: 27, status: "rest" },
+  { label: "Mi", date: 28, status: "today" },
+  { label: "Jo", date: 29, status: "rest" },
+  { label: "Vi", date: 30, status: "planned" },
+  { label: "Sâ", date: 31, status: "rest" },
+  { label: "Du", date: 1, status: "rest" },
 ];
+
+const tabs = ["Exerciții", "Progres", "Reușite"];
 
 function GetPhoneCurrentHourLabel() {
   const now = new Date();
-  const currentHourLabel: string = `${now.getHours()}:${now.getMinutes()}`;
+  const currentHourLabel: string = `${now.getHours()}:${String(now.getMinutes()).padStart(2, "0")}`;
   return (
   <span>{currentHourLabel}</span>
   );
- 
-}
 
-function OnboardingBenefits() {
-  return (
-    <ul className={styles.benefits}>
-      {onboardingBenefits.map((benefit) => (
-        <li key={benefit}>
-          <span className={styles.checkIcon}>
-            <svg viewBox="0 0 24 24">
-              <path d="m5 12 5 5L20 6" />
-            </svg>
-          </span>
-          <span>{benefit}</span>
-        </li>
-      ))}
-    </ul>
-  );
 }
 
 function PhoneStatusIcons() {
@@ -58,12 +49,118 @@ function PhoneStatusIcons() {
   );
 }
 
+function WeekCard() {
+  return (
+    <div className={styles.weekCard}>
+      <div className={styles.weekHeader}>
+        <div>
+          <span className={styles.weekEyebrow}>SĂPTĂMÂNA TA</span>
+          <strong className={styles.weekTitle}>
+            Azi ai programat exerciții · reminder 08:45
+          </strong>
+        </div>
+        <span className={styles.weekRing}>
+          <span>
+            <strong>1</strong>/3
+          </span>
+        </span>
+      </div>
+      <ol className={styles.weekDays}>
+        {weekDays.map((day) => (
+          <li key={day.label} data-status={day.status}>
+            <span className={styles.dayLabel}>{day.label}</span>
+            <span className={styles.dayDate}>{day.date}</span>
+          </li>
+        ))}
+      </ol>
+      <div className={styles.weekLegend}>
+        <span>
+          <i className={styles.legendDone} /> făcută
+        </span>
+        <span>
+          <i className={styles.legendPlanned} /> planificată
+        </span>
+      </div>
+      <span className={styles.editSchedule}>Editează programul ›</span>
+    </div>
+  );
+}
+
+const recentExercises = [
+  {
+    title: "Exerciții pentru spate",
+    details: "Intermediar · 08:24",
+    sessions: "3 antrenamente finalizate",
+    lastSession: "Ieri",
+    thumbnail: "/images/exercise-thumbnail-back.jpg",
+  },
+  {
+    title: "Mobilitate umăr",
+    details: "Începător · 06:10",
+    sessions: "1 antrenament finalizat",
+    lastSession: "Acum 3 zile",
+    thumbnail: "/images/exercise-thumbnail-shoulder.jpg",
+  },
+];
+
+function RecentExercises() {
+  return (
+    <div className={styles.exerciseList}>
+      {recentExercises.map((exercise) => (
+        <div key={exercise.title} className={styles.exerciseCard}>
+          <Image
+            src={exercise.thumbnail}
+            alt=""
+            width={144}
+            height={180}
+            sizes="40px"
+            className={styles.exerciseThumbnail}
+          />
+          <div className={styles.exerciseInfo}>
+            <strong>{exercise.title}</strong>
+            <span>{exercise.details}</span>
+            <span className={styles.exerciseSessions}>{exercise.sessions}</span>
+            <span>{exercise.lastSession}</span>
+          </div>
+          <span className={styles.exerciseChevron}>›</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function BottomNavigation() {
+  return (
+    <div className={styles.bottomNavigation}>
+      <span className={styles.navActive}>
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4 10.5 12 4l8 6.5V20h-5.5v-5h-5v5H4z" />
+        </svg>
+        Acasă
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round">
+          <path d="M3 6.5c3-1.2 6-1.2 9 0v13c-3-1.2-6-1.2-9 0zM12 6.5c3-1.2 6-1.2 9 0v13c-3-1.2-6-1.2-9 0z" />
+        </svg>
+        Cursuri
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4.5 20a7.5 7.5 0 0 1 15 0" />
+        </svg>
+        Profil
+      </span>
+    </div>
+  );
+}
+
 export function PhoneApplicationPreview() {
   return (
     <div
       className="phone"
       role="img"
-      aria-label="Previzualizare a ecranului de întâmpinare Biotop Rehab: Program complet, Mișcare fără durere, 9 cursuri specializate pe articulații și opțiunile Începe acum și Am deja cont. Semnal și Wi-Fi complete, baterie 100%."
+      aria-label="Previzualizare a ecranului Acasă din aplicația Biotop Rehab: programul săptămânii cu 1 din 3 antrenamente făcute, reminder la 08:45 și ultimul exercițiu vizionat, Exerciții pentru spate."
     >
       <div className="phone-camera" />
       <div className="phone-header" aria-hidden="true">
@@ -71,24 +168,35 @@ export function PhoneApplicationPreview() {
         <PhoneStatusIcons />
       </div>
       <div className={styles.screen} aria-hidden="true">
-        <Image
-          src="/images/program-complet.png"
-          alt=""
-          width={300}
-          height={600}
-          sizes="240px"
-          className={styles.programImage}
-        />
-        <h3 className={styles.title}>Mișcare fără durere.</h3>
-        <p className={styles.description}>
-          9 cursuri specializate pe articulații, anatomie, exerciții ghidate și
-          programe de recuperare, prevenție și performanță.
-        </p>
-        <OnboardingBenefits />
-        <div className={styles.actions}>
-          <span className={styles.primaryAction}>Începe acum</span>
-          <span className={styles.secondaryAction}>Am deja cont</span>
+        <div className={styles.greetingRow}>
+          <div>
+            <span className={styles.greeting}>Salut!</span>
+            <h3 className={styles.title}>Continuă-ți recuperarea</h3>
+          </div>
+          <span className={styles.messageButton}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <rect x="4" y="5" width="16" height="13" rx="2.5" />
+              <path d="M8 9.5h8M8 13h5" />
+            </svg>
+          </span>
+          <span className={styles.avatar}>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="9.5" r="4.5" />
+              <path d="M3 24c0-5 4-8.5 9-8.5s9 3.5 9 8.5z" />
+            </svg>
+          </span>
         </div>
+        <div className={styles.tabs}>
+          {tabs.map((tab, index) => (
+            <span key={tab} className={index === 0 ? styles.tabActive : undefined}>
+              {tab}
+            </span>
+          ))}
+        </div>
+        <WeekCard />
+        <h4 className={styles.sectionTitle}>Ultimele exerciții</h4>
+        <RecentExercises />
+        <BottomNavigation />
       </div>
     </div>
   );
